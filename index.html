@@ -2,199 +2,970 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avishkar Sarang | Creative Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <title>Avishkar Sarang | Graphic Designer & Video Editor</title>
+  <meta name="description" content="Explore the creative portfolio of Avishkar Sarang — Graphic Designer, Video Editor and Motion Graphics Creator.">
 
-body {
-  background: #090909;
-  color: white;
-  font-family: Arial, sans-serif;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-header {
-  padding: 25px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #292929;
-}
+  <style>
+    :root {
+      --bg: #080808;
+      --panel: #111111;
+      --red: #ff2638;
+      --white: #f5f5f5;
+      --muted: #a1a1a1;
+      --border: rgba(255,255,255,.10);
+    }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.logo span {
-  color: #ff3030;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
-.hero {
-  min-height: 65vh;
-  padding: 100px 8%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
 
-.tag {
-  color: #ff4545;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-h1 {
-  font-size: clamp(42px, 8vw, 85px);
-  line-height: 1.1;
-  margin-bottom: 25px;
-}
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
 
-h1 span {
-  color: #ff3030;
-}
+    /* NAVIGATION */
 
-.hero p {
-  color: #bdbdbd;
-  font-size: 18px;
-  line-height: 1.8;
-  max-width: 600px;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,8,8,.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
 
-section {
-  padding: 50px 8% 90px;
-}
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-.section-title {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
 
-.subtitle {
-  color: #aaa;
-  margin-bottom: 35px;
-}
+    .logo span {
+      color: var(--red);
+    }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
 
-.card {
-  background: #151515;
-  border: 1px solid #333;
-  border-radius: 16px;
-  padding: 35px;
-  min-height: 240px;
-  transition: 0.3s;
-}
+    .nav-links a {
+      font-size: 13px;
+      color: #d0d0d0;
+      transition: color .3s;
+    }
 
-.card:hover {
-  border-color: #ff3030;
-  transform: translateY(-5px);
-}
+    .nav-links a:hover {
+      color: var(--red);
+    }
 
-.card .number {
-  color: #ff3030;
-  font-size: 14px;
-  margin-bottom: 25px;
-}
+    .nav-contact {
+      border: 1px solid var(--red);
+      padding: 11px 17px;
+      border-radius: 5px;
+    }
 
-.card h3 {
-  font-size: 27px;
-  margin-bottom: 15px;
-}
+    /* HERO */
 
-.card p {
-  color: #aaa;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
+    .hero {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      align-items: center;
+      gap: 45px;
+      padding-top: 65px;
+      padding-bottom: 75px;
+      position: relative;
+      isolation: isolate;
+    }
 
-.card a {
-  display: inline-block;
-  background: #ff3030;
-  color: white;
-  text-decoration: none;
-  padding: 12px 18px;
-  border-radius: 6px;
-  font-weight: bold;
-}
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      left: -180px;
+      top: 90px;
+      background: var(--red);
+      opacity: .10;
+      filter: blur(120px);
+      z-index: -1;
+    }
 
-footer {
-  border-top: 1px solid #292929;
-  text-align: center;
-  padding: 25px;
-  color: #999;
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #ff6875;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
 
-@media (max-width: 600px) {
-  header {
-    padding: 20px 6%;
-  }
-  .hero {
-    padding: 75px 6%;
-  }
-  section {
-    padding: 40px 6% 60px;
-  }
-}
-</style>
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 15px var(--red);
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(42px, 6.2vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -3.5px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h1 .highlight {
+      color: var(--red);
+      text-shadow: 0 0 35px rgba(255,38,56,.22);
+    }
+
+    .hero-description {
+      max-width: 510px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      min-height: 48px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .3s ease;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+      box-shadow: 0 5px 28px rgba(255,38,56,.17);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 35px rgba(255,38,56,.35);
+    }
+
+    .btn-outline {
+      border: 1px solid #444;
+      background: rgba(255,255,255,.02);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--red);
+      color: #ff6875;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 35px;
+      margin-top: 45px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 23px;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* PROFILE PHOTO AREA */
+
+    .hero-visual {
+      min-height: 490px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .photo-frame {
+      width: min(100%, 390px);
+      height: 465px;
+      position: relative;
+      border: 1px solid rgba(255,38,56,.48);
+      border-radius: 12px;
+      padding: 10px;
+      background: linear-gradient(145deg, #251014, #101010 45%, #260b10);
+      box-shadow: 0 0 60px rgba(255,38,56,.10);
+      transform: rotate(1deg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 7px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 25px;
+      background:
+        radial-gradient(ellipse at 50% 35%, rgba(255,38,56,.20), transparent 48%),
+        linear-gradient(145deg, #1b1b1b, #090909);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    .photo-placeholder img {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .photo-icon {
+      width: 85px;
+      height: 85px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,38,56,.6);
+      border-radius: 50%;
+      color: var(--red);
+      font-size: 38px;
+      margin-bottom: 22px;
+      box-shadow: 0 0 35px rgba(255,38,56,.12);
+    }
+
+    .photo-placeholder h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .photo-placeholder p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .photo-tag {
+      position: absolute;
+      right: -20px;
+      bottom: 35px;
+      background: #141414;
+      border: 1px solid rgba(255,38,56,.6);
+      border-radius: 6px;
+      padding: 13px 17px;
+      font-size: 12px;
+      box-shadow: 0 10px 30px #000;
+    }
+
+    .photo-tag span {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .corner-label {
+      position: absolute;
+      top: 20px;
+      left: -24px;
+      padding: 11px 15px;
+      background: var(--red);
+      color: white;
+      border-radius: 4px;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      font-weight: 800;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(1deg); }
+      50% { transform: translateY(-9px) rotate(1deg); }
+    }
+
+    /* SECTION COMMON */
+
+    section.content-section {
+      padding: 95px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -1.5px;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* SERVICES */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      min-height: 310px;
+      padding: 35px;
+      background: linear-gradient(145deg, #151515, #0d0d0d);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      transition: .35s ease;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -80px;
+      top: -80px;
+      background: var(--red);
+      filter: blur(100px);
+      opacity: .12;
+      transition: opacity .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255,38,56,.65);
+    }
+
+    .service-card:hover::after {
+      opacity: .28;
+    }
+
+    .service-number {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 28px;
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 25px;
+      margin-bottom: 14px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      color: #ff5362;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .text-link:hover {
+      color: white;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .about-art {
+      min-height: 310px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,38,56,.35);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,38,56,.20), transparent 55%),
+        repeating-linear-gradient(135deg, #151515 0, #151515 1px, #0b0b0b 1px, #0b0b0b 13px);
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .about-art strong {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.05;
+    }
+
+    .about-art strong span {
+      color: var(--red);
+    }
+
+    .about-copy p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 18px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .skill-list span {
+      padding: 10px 13px;
+      background: #151515;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: #ddd;
+      font-size: 11px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      padding: 55px 30px;
+      text-align: center;
+      border: 1px solid rgba(255,38,56,.35);
+      border-radius: 12px;
+      background:
+        radial-gradient(ellipse at 50% 110%, rgba(255,38,56,.14), transparent 60%),
+        #101010;
+    }
+
+    .contact-box p {
+      max-width: 520px;
+      margin: 0 auto 27px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      color: #888;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .footer-name {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    /* REVEAL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* MOBILE RESPONSIVE */
+
+    @media (max-width: 800px) {
+      nav {
+        min-height: 68px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .nav-contact {
+        padding: 9px 11px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding-top: 60px;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons, .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        min-height: 430px;
+      }
+
+      .photo-frame {
+        height: 410px;
+        max-width: 340px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-art {
+        min-height: 230px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 91%;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .nav-links {
+        gap: 11px;
+      }
+
+      .nav-links a {
+        font-size: 10px;
+      }
+
+      .nav-links .optional-link {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-stats {
+        gap: 20px;
+      }
+
+      .stat strong {
+        font-size: 20px;
+      }
+
+      section.content-section {
+        padding: 70px 0;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 27px;
+        min-height: 280px;
+      }
+
+      .photo-tag {
+        right: -7px;
+      }
+
+      .corner-label {
+        left: -8px;
+      }
+
+      .contact-box {
+        padding: 40px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">AVISHKAR<span>.</span></div>
-  <div>MY PORTFOLIO</div>
-</header>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#home">AVISHKAR<span>.</span></a>
 
-<div class="hero">
-  <div class="tag">GRAPHIC DESIGNER & VIDEO EDITOR</div>
-
-  <h1>CREATING<br>
-  <span>VISUAL</span> STORIES.</h1>
-
-  <p>
-    Hi, I'm Avishkar Sarang. I create eye-catching graphic designs,
-    social media creatives, branding and engaging video edits.
-    Welcome to my creative portfolio.
-  </p>
-</div>
-
-<section>
-  <h2 class="section-title">Explore My Work</h2>
-  <p class="subtitle">Creativity meets professional design.</p>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="number">01 / GRAPHIC DESIGN</div>
-      <h3>Graphic Design</h3>
-      <p>Social media posts, banners, branding and creative designs.</p>
-      <a href="graphic-design.html">Explore Designs →</a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#services">Portfolio</a>
+          <a class="optional-link" href="#about">About</a>
+          <a class="nav-contact" href="#contact">Contact ↗</a>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <div class="card">
-      <div class="number">02 / VIDEO EDITING</div>
-      <h3>Video Editing</h3>
-      <p>Reels, promotional videos, cinematic edits and motion graphics.</p>
-      <a href="video-editing.html">Watch Videos →</a>
+  <main>
+    <!-- HOME / HERO -->
+    <section class="container hero" id="home">
+
+      <div class="hero-copy reveal">
+        <div class="eyebrow">
+          <span class="dot"></span>
+          Creative Designer & Editor
+        </div>
+
+        <h1>
+          I'M AVISHKAR<br>
+          <span class="highlight">SARANG.</span>
+          <br>DESIGNING<br>THE VISION.
+        </h1>
+
+        <p class="hero-description">
+          Graphic Designer & Video Editor crafting bold visuals,
+          cinematic edits and creative digital experiences.
+          Turning ideas into visuals that make an impact.
+        </p>
+
+        <div class="buttons">
+          <a href="#services" class="btn btn-primary">
+            EXPLORE MY WORK ↗
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            LET'S CONNECT
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>01</strong>
+            <span>GRAPHIC DESIGN</span>
+          </div>
+
+          <div class="stat">
+            <strong>02</strong>
+            <span>VIDEO EDITING</span>
+          </div>
+
+          <div class="stat">
+            <strong>∞</strong>
+            <span>CREATIVE IDEAS</span>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        YOUR PHOTO:
+        Create a folder named "assets" in your repository.
+        Upload your photo as "profile.jpg".
+        Then this code will display it automatically.
+      -->
+
+      <div class="hero-visual reveal">
+        <div class="photo-frame">
+          <div class="photo-placeholder">
+
+            <img
+              id="profilePhoto"
+              src="assets/profile.jpg"
+              alt="Avishkar Sarang"
+            >
+
+            <div id="photoFallback">
+              <div class="photo-icon">✦</div>
+              <h3>YOUR PHOTO HERE</h3>
+              <p>
+                Add your portrait to the assets folder.<br>
+                Black & Red Cinematic Style
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="corner-label">CREATIVE PORTFOLIO</div>
+
+        <div class="photo-tag">
+          <span>●</span> OPEN TO CREATIVE PROJECTS
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SERVICES -->
+    <section class="content-section" id="services">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <div class="section-kicker">What I Create</div>
+          <h2>MY CREATIVE <span style="color:#ff2638">WORLD.</span></h2>
+          <p>
+            Explore my creative work across graphic design,
+            video editing and visual storytelling.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card reveal">
+            <div class="service-number">01 / GRAPHIC DESIGN</div>
+            <div class="service-icon">▧</div>
+
+            <h3>Graphic Design</h3>
+
+            <p>
+              Social media posts, banners, branding, posters,
+              promotional creatives and visual designs.
+            </p>
+
+            <a class="text-link" href="graphic-design.html">
+              EXPLORE DESIGNS <span>↗</span>
+            </a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">02 / VIDEO EDITING</div>
+            <div class="service-icon">▶</div>
+
+            <h3>Video Editing</h3>
+
+            <p>
+              Cinematic edits, Instagram Reels, YouTube videos,
+              motion graphics, transitions and visual effects.
+            </p>
+
+            <a class="text-link" href="video-editing.html">
+              WATCH MY WORK <span>↗</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="content-section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-art reveal">
+          <strong>IDEAS<br>INTO<br><span>VISUALS.</span></strong>
+        </div>
+
+        <div class="about-copy reveal">
+          <div class="section-kicker">A Little About Me</div>
+
+          <h2>CREATIVITY MEETS <span style="color:#ff2638">DESIGN.</span></h2>
+
+          <p>
+            Hey, I'm Avishkar Sarang, a Graphic Designer and Video
+            Editor passionate about creating impactful visuals.
+            I enjoy combining design, color, typography and motion
+            to communicate ideas in a powerful way.
+          </p>
+
+          <p>
+            This portfolio showcases my creative projects and
+            editing work. New designs and videos can be added
+            as the portfolio grows.
+          </p>
+
+          <div class="skill-list">
+            <span>Photoshop</span>
+            <span>Illustrator</span>
+            <span>Premiere Pro</span>
+            <span>After Effects</span>
+            <span>Canva</span>
+            <span>Motion Graphics</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-section" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+
+          <div class="section-kicker">Have a Project?</div>
+
+          <h2>LET'S CREATE <span style="color:#ff2638">SOMETHING BOLD.</span></h2>
+
+          <p>
+            Have a design project, video idea or creative
+            collaboration in mind? Let's connect and make it happen.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="mailto:avishkarsarang46@gmail.com?subject=Creative%20Project%20Inquiry"
+          >
+            CONTACT ME ↗
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="logo" href="#home">AVISHKAR<span>.</span></a>
+
+      <p>
+        © <span id="year"></span> <span class="footer-name">Avishkar Sarang</span>.
+        Crafted with creativity.
+      </p>
+
+      <p>GRAPHIC DESIGN · VIDEO EDITING</p>
     </div>
+  </footer>
 
-  </div>
-</section>
+  <script>
+    // Automatically display your photo when the file is uploaded.
+    const profilePhoto = document.getElementById("profilePhoto");
+    const photoFallback = document.getElementById("photoFallback");
 
-<footer>
-  © 2026 Avishkar Sarang | All Rights Reserved
-</footer>
+    profilePhoto.onload = function () {
+      profilePhoto.style.display = "block";
+      photoFallback.style.display = "none";
+    };
+
+    profilePhoto.onerror = function () {
+      profilePhoto.style.display = "none";
+      photoFallback.style.display = "block";
+    };
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Reveal sections smoothly while scrolling.
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((element) => observer.observe(element));
+    } else {
+      revealElements.forEach((element) =>
+        element.classList.add("visible")
+      );
+    }
+  </script>
 
 </body>
 </html>
